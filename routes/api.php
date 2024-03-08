@@ -66,3 +66,9 @@ Route::get('media/usuario', function (Request $request) {
     $resultado = ($primeiraNota + $segundaNota + $terceiraNota + $quartaNota + $quintaNota) / 5;
     return $primeiraNota . "+" . $segundaNota . '+' . $terceiraNota . '+' . $quartaNota . '+' . $quintaNota . '=' . $resultado;
 });
+
+Route::get('dobro', function (Request $request) {
+    $numero = $request->input('n');
+    $resultado = $numero * 2;
+    return 'O dobro do número ' . $numero . ' é igual a: ' . $resultado;
+});
