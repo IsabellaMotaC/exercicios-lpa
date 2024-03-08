@@ -49,3 +49,10 @@ Route::get('receber/divisão', function (Request $request) {
     $resultado = $primeiroNumero / $segundoNumero;
     return $primeiroNumero . "/" . $segundoNumero . '=' . $resultado;
 });
+
+Route::get('multiplicação', function (Request $request) {
+    $primeiroNumero = $request->input('primeiroN');
+    $segundoNumero = $request->input('segundoN');
+    $resultado = $primeiroNumero * $segundoNumero;
+    return $primeiroNumero . 'x' . $segundoNumero . '=' . $resultado;
+});
