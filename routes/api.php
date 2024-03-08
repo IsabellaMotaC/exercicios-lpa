@@ -87,3 +87,11 @@ Route::get('questao12', function (Request $request) {
     $resultado = $valorOriginal - ($desconto * $porcentagem);
     return ' o valor do produto é ' . $valorOriginal . ' com o desconto de ' . $desconto . "%" . ' o valor atual é de ' . $resultado;
 });
+
+Route::get('salario', function (Request $request) {
+    $salarioantigo = $request->input('salarioantigo');
+    $aumento = $request->input('aumento');
+    $porcentagem = $salarioantigo / 100;
+    $resultado  = $salarioantigo + ($porcentagem * $aumento);
+    return $resultado;
+});
