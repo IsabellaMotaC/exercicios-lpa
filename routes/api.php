@@ -42,3 +42,10 @@ Route::get('divisão', function (Request $request) {
     $resultado = $segundoNumero / $primeiroNumero;
     return 'O resultado da divisão é: ' . $segundoNumero . '/' . $primeiroNumero . '=' . $resultado;
 });
+
+Route::get('receber/divisão', function (Request $request) {
+    $primeiroNumero = $request->input('primeiroN');
+    $segundoNumero = $request->input('segundoN');
+    $resultado = $primeiroNumero / $segundoNumero;
+    return $primeiroNumero . "/" . $segundoNumero . '=' . $resultado;
+});
