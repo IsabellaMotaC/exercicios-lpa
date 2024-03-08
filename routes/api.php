@@ -56,3 +56,13 @@ Route::get('multiplicação', function (Request $request) {
     $resultado = $primeiroNumero * $segundoNumero;
     return $primeiroNumero . 'x' . $segundoNumero . '=' . $resultado;
 });
+
+Route::get('media/usuario', function (Request $request) {
+    $primeiraNota = $request->input('primeiraN');
+    $segundaNota = $request->input('segundaN');
+    $terceiraNota = $request->input('terceiraN');
+    $quartaNota = $request->input('quartaN');
+    $quintaNota = $request->input('quintaN');
+    $resultado = ($primeiraNota + $segundaNota + $terceiraNota + $quartaNota + $quintaNota) / 5;
+    return $primeiraNota . "+" . $segundaNota . '+' . $terceiraNota . '+' . $quartaNota . '+' . $quintaNota . '=' . $resultado;
+});
