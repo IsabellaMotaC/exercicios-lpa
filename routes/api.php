@@ -95,3 +95,9 @@ Route::get('salario', function (Request $request) {
     $resultado  = $salarioantigo + ($porcentagem * $aumento);
     return $resultado;
 });
+
+Route::get('questao14', function (Request $request) {
+    $valorinicial = $request->input('valor');
+    $resultado = $valorinicial / 10;
+    return $resultado;
+});
