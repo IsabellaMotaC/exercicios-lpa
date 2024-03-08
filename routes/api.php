@@ -109,3 +109,12 @@ Route::get('comissao', function (Request $request) {
     $resultado  = $preçoproduto + ($porcentagem * $comissão);
     return $resultado;
 });
+
+Route::get('dias', function (request $request) {
+    $dias = $request->input('dias');
+    $horas = $dias * 24;
+    $minutos = $horas * 60;
+    $segundos = $minutos * 60;
+    $resultado = "dias: " . $dias . " horas: " . $horas . " minutos: " . $minutos . " segundos: " . $segundos;
+    return $resultado;
+});
