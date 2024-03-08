@@ -118,3 +118,10 @@ Route::get('dias', function (request $request) {
     $resultado = "dias: " . $dias . " horas: " . $horas . " minutos: " . $minutos . " segundos: " . $segundos;
     return $resultado;
 });
+
+Route::get('produto', function (request $request) {
+    $precoProduto = $request->input('Produto');
+    $quantidade = $request->input('quantidade');
+    $resultado = "valor total: " . $precoProduto * $quantidade;
+    return $resultado;
+    });
