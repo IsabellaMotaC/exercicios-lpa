@@ -20,3 +20,10 @@ Route::get('nome/usuario', function (Request $request) {
     $cidade = $request->input('cidade');
     return 'Meu nome é ' . $nome . ' nasci no ano de ' . $nascimento . ' na cidade de ' . $cidade;
 });
+
+Route::get('soma', function (Request $request) {
+    $primeiroNumero = $request->input("primeiroN");
+    $segundoNumero = $request->input('segundoN');
+    $resultado = $primeiroNumero + $segundoNumero;
+    return 'O resultado da soma dos números é: ' . $primeiroNumero . '+' . $segundoNumero . '=' . $resultado;
+});
