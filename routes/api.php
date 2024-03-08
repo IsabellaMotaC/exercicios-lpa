@@ -35,3 +35,10 @@ Route::get('subtração', function (Request $request) {
     $resultado = $primeiroNumero - $segundoNumero - $terceiroNumero;
     return 'O resultado da subtração é: ' . $primeiroNumero . '-' . $segundoNumero . '-' . $terceiroNumero . '=' . $resultado;
 });
+
+Route::get('divisão', function (Request $request) {
+    $primeiroNumero = $request->input('primeiroN');
+    $segundoNumero = $request->input('segundoN');
+    $resultado = $segundoNumero / $primeiroNumero;
+    return 'O resultado da divisão é: ' . $segundoNumero . '/' . $primeiroNumero . '=' . $resultado;
+});
