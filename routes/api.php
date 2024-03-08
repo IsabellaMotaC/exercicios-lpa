@@ -79,3 +79,11 @@ Route::get('area', function (Request $request) {
     $resultado = $base * $altura;
     return $resultado;
 });
+
+Route::get('questao12', function (Request $request) {
+    $valorOriginal = $request->input('valorTotal');
+    $desconto = $request->input('desconto');
+    $porcentagem = $valorOriginal / 100;
+    $resultado = $valorOriginal - ($desconto * $porcentagem);
+    return ' o valor do produto é ' . $valorOriginal . ' com o desconto de ' . $desconto . "%" . ' o valor atual é de ' . $resultado;
+});
