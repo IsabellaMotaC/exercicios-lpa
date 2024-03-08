@@ -27,3 +27,11 @@ Route::get('soma', function (Request $request) {
     $resultado = $primeiroNumero + $segundoNumero;
     return 'O resultado da soma dos números é: ' . $primeiroNumero . '+' . $segundoNumero . '=' . $resultado;
 });
+
+Route::get('subtração', function (Request $request) {
+    $primeiroNumero = $request->input('primeiroN');
+    $segundoNumero = $request->input('segundoN');
+    $terceiroNumero = $request->input('terceiroN');
+    $resultado = $primeiroNumero - $segundoNumero - $terceiroNumero;
+    return 'O resultado da subtração é: ' . $primeiroNumero . '-' . $segundoNumero . '-' . $terceiroNumero . '=' . $resultado;
+});
