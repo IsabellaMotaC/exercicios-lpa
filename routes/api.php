@@ -148,7 +148,7 @@ Route::get('exercicio4', function (Request $request) {
     }
 });
 
-Route::get('maior', function (Request $request) {
+Route::get('exercicio1', function (Request $request) {
     $numero = $request->input('numero');
     if ($numero > 10) {
         return 'Número maior que 10';
@@ -157,14 +157,14 @@ Route::get('maior', function (Request $request) {
     }
 });
 
-Route::get('temperatura', function (Request $request) {
+Route::get('exercicio7', function (Request $request) {
     $temperatura = $request->input('temperatura');
     if ($temperatura > 30) {
         return 'Está quente!';
     }
 });
 
-Route::get('positivo/negativo', function (Request $request) {
+Route::get('exercicio2', function (Request $request) {
     $numero = $request->input('numero');
     if ($numero > 0) {
         return 'Esse número é positivo';
@@ -175,7 +175,7 @@ Route::get('positivo/negativo', function (Request $request) {
     }
 });
 
-Route::get('numeroMaior', function (Request $request) {
+Route::get('exercicio5', function (Request $request) {
     $numero1 = $request->input('numero1');
     $numero2 = $request->input('numero2');
     if ($numero1 > $numero2) {
