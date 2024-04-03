@@ -185,20 +185,18 @@ Route::get('exercicio5', function (Request $request) {
     }
 });
 
-Route::get('exercicio6', function (Request $request){
+Route::get('exercicio6', function (Request $request) {
     $numero = $request->input('numero');
-    if ($numero % 9 ==0)
-    {
+    if ($numero % 9 == 0) {
         return 'É divisivel';
     } else {
         return 'Não é divisivel';
     }
 });
-    
-Route::get('exercicio8', function (Request $request){
+
+Route::get('exercicio8', function (Request $request) {
     $numero = $request->input('numero');
-    if ($numero % 7 ==0)
-    {
+    if ($numero % 7 == 0) {
         return 'É multiplo de 7';
     } else {
         return 'Não é multiplo de 7';
@@ -216,9 +214,9 @@ Route::get('exercicio9', function (Request $request) {
 
 Route::get('exercicio10', function (Request $request) {
     $numero = $request->input('numero');
-    if ($numero % 3 ==0) {
+    if ($numero % 3 == 0) {
         return 'positivo e ímpar';
-    } 
+    }
 });
 
 Route::get('exercicio11', function (Request $request) {
@@ -232,10 +230,9 @@ Route::get('exercicio11', function (Request $request) {
     }
 });
 
-Route::get('exercicio12', function (Request $request){
+Route::get('exercicio12', function (Request $request) {
     $numero = $request->input('numero');
-    if ($numero % 6 ==0)
-    {
+    if ($numero % 6 == 0) {
         return 'É divisivel';
     } else {
         return 'Não é divisivel';
@@ -244,17 +241,17 @@ Route::get('exercicio12', function (Request $request){
 
 Route::get('exercicio13', function (Request $request) {
     $nome = $request->input('nome');
-    if ($nome == 'Alice' ) {
+    if ($nome == 'Alice') {
         return 'Olá Alice';
-    } 
+    }
 });
 
-Route::get('exercicio14', function(Request $request){
+Route::get('exercicio14', function (Request $request) {
     $idade = $request->input('idade');
     $carteira = $request->input('carteira');
-    if($idade >= 18 . $carteira = 'sim'){
+    if ($idade >= 18 . $carteira = 'sim') {
         return 'Pode dirigir';
-    } else if($idade <18 . $carteira = 'não') {
+    } else if ($idade < 18 . $carteira = 'não') {
         return 'Não pode dirigir';
     }
 });
@@ -283,15 +280,14 @@ Route::get('exercicio17', function (Request $request) {
 Route::get('exercicio18', function (Request $request) {
     $numero1 = $request->input('numero1');
     $numero2 = $request->input('numero2');
-    if($numero1 == 0) {
+    if ($numero1 == 0) {
         return "não é possível efetuar a divisão pois o primeiro número é zero";
-    } 
-    else if ($numero2 == 0) {
+    } else if ($numero2 == 0) {
         return 'não é possível efetuar a divisão pois o 
         segundo número é zero';
-    } else{
+    } else {
         $resultado = $numero1 / $numero2;
-    return $numero1 . "/" . $numero2 . '=' . $resultado;
+        return $numero1 . "/" . $numero2 . '=' . $resultado;
     }
 });
 
@@ -299,22 +295,128 @@ Route::get('exercicio19', function (Request $request) {
     $numero1 = $request->input('numero1');
     $numero2 = $request->input('numero2');
     $resultado = $numero1 * $numero2;
-    if($resultado > 100){
+    if ($resultado > 100) {
         return 'Resultado maior que 100';
-    } else if($resultado < 100){
+    } else if ($resultado < 100) {
         return 'Resultado menor que 100';
-    } 
+    }
 });
 
 Route::get('exercicio20', function (Request $request) {
     $primeiroNumero = $request->input("numero1");
     $segundoNumero = $request->input('numero2');
     $resultado = $primeiroNumero + $segundoNumero;
-    if($resultado % 2 ==0){
+    if ($resultado % 2 == 0) {
         $multiplica = $primeiroNumero * $segundoNumero;
         return $primeiroNumero . 'x' . $segundoNumero . '=' . $multiplica;
     } else {
         $dividir = $primeiroNumero % $segundoNumero;
         return $primeiroNumero . '/' . $segundoNumero . '=' . $dividir;
+    }
+});
+
+Route::get('exercicio/1', function (Request $request) {
+    $primeiraNota = $request->input('primeiraN');
+    $segundaNota = $request->input('segundaN');
+    $terceiraNota = $request->input('terceiraN');
+    $resultado = ($primeiraNota + $segundaNota + $terceiraNota) / 3;
+    if ($resultado >= 7) {
+        return "Aluno Aprovado!";
+    } else if ($resultado < 7) {
+        return 'Aluno Reprovado!';
+    }
+});
+
+Route::get('exercicio/2', function (Request $request) {
+    $renda = $request->input('renda');
+    if ($renda < 1900) {
+    }
+    return 'isento de imposto';
+    if ($renda >= 1901) {
+        if ($renda <= 2800) {
+            $calculo1 = $renda * 7;
+            $calculo2 = $calculo1 / 100;
+            return $calculo2;
+        }
+    }
+
+    if ($renda >= 2801) {
+        if ($renda <= 3700) {
+            $calculo3 = $renda * 15;
+            $calculo4 = $calculo3 / 100;
+            return $calculo4;
+        }
+    }
+
+    if ($renda >= 3701) { {
+            $calculo5 = $renda * 22;
+            $calculo6 = $calculo5 / 100;
+            return $calculo6;
+        }
+    }
+});
+
+Route::get('exercicio/3', function (Request $request) {
+    $ano = $request->input('ano');
+    if ($ano % 4 == 0) {
+        return 'É um ano bissexto!';
+    } else {
+        return 'Não é um ano bissexto!';
+    }
+});
+
+Route::get('exercicio/4', function (Request $request) {
+    $preço = $request->input('valor');
+    $desconto = $preço * 15;
+    $resultado = $desconto / 100;
+    $resultado2 = $preço - $resultado;
+    if ($preço > 1000) {
+        return 'O valor a ser pago com desconto é de ' . $resultado2;
+    } else {
+        return 'O valor não poderá incluir desconto.';
+    }
+});
+
+Route::get('exercicio/5', function (Request $request) {
+    $peso = $request->input('peso');
+    $altura = $request->input('altura');
+    $resultado = $peso / ($altura * $altura);
+
+    if ($resultado < 18.5) {
+        return 'Abaixo do peso!';
+    }
+    if ($resultado >= 18.5) {
+        if ($resultado < 25) {
+            return 'Peso adequado!';
+        }
+    }
+    if ($resultado >= 25) {
+        if ($resultado < 30) {
+            return 'Sobrepeso!';
+        }
+    }
+    if ($resultado >= 30) {
+        return 'Obesidade!';
+    }
+});
+
+Route::get('exercicio/6', function (Request $request) {
+    $valor = $request->input('valor');
+    $codigo = $request->input('codigo');
+    if ($codigo == 1) {
+        $aumento = ($valor * 5) / 100;
+        return 'O aumento salarial para o Operário é de ' . $aumento . ' reais';
+    }
+    if ($codigo == 2) {
+        $aumento2 = ($valor * 10) / 100;
+        return 'O aumento salarial para o Técnico é de ' . $aumento2 . ' reais';
+    }
+    if ($codigo == 3) {
+        $aumento3 = ($valor * 15) / 100;
+        return 'O aumento salarial para o Analista é de ' . $aumento3 . " reais";
+    }
+    if ($codigo == 4) {
+        $aumento4 = ($valor * 20) / 100;
+        return 'O aumento salarial do Gerente é de ' . $aumento4 . ' reais';
     }
 });
